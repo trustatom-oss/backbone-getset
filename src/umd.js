@@ -5,7 +5,9 @@
     define(['exports', 'Backbone', 'underscore'], factory)
   } else if (typeof exports === 'object') {
     // CommonJS
-    factory(exports, require('backbone'), require('underscore'))
+    var backbone = require('backbone')
+    factory(exports, backbone, require('underscore'))
+    return backbone
   } else {
     // Browser globals
     factory({}, root.Backbone, root._)
